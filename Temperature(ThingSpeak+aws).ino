@@ -3,15 +3,15 @@
 #include <ESP8266WebServer.h>
 #include <DallasTemperature.h>
 #include <WiFiClientSecure.h>
-    
+#include "wifi_account.h"
 #define ONE_WIRE_BUS D7
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature DS18B20(&oneWire);
 
 const char *key="/update?api_key=WA25FHJVSIC7LOVI&field1=";
 const char* host = "api.thingspeak.com";
-const char* ssid = "smPhone";
-const char* pass = "abcdefgh";
+const char* ssid = wifiid;
+const char* pass = wifipasswd;
 const char* apiKey = "WA25FHJVSIC7LOVI";
 const char* resource = "/update?api_key=";
 const char* server = "api.thingspeak.com";
